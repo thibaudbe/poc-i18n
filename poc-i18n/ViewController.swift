@@ -12,14 +12,23 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
+    
+    let label = UILabel()
+    label.frame = CGRect(x: 0, y: 0, width: 300, height: 40)
+    label.text = NSLocalizedString("label.test", comment: "test")
+    label.textAlignment = .center
+    label.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(label)
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+    label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
+//    NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal,
+//                       toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+//    NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal,
+//                       toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+
+  }
 
 }
 
